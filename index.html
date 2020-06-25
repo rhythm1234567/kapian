@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: url("2.jpg");
+            background-size: cover;
+        }
+
+
+
+        .container:hover .front {
+
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+        }
+
+        .head {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            height: 100px;
+        }
+
+        .content {
+            width: 100%;
+            height: 600px;
+            background-color: rgb(255, 255, 255, 0.5);
+            margin: 0 auto;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .btn {
+            width: 100px;
+            height: 50px;
+            background: url("3.jpg");
+
+            border: 0;
+            border-radius: 10px;
+            color: white;
+            font-size: 17px;
+            margin: 25px;
+            outline: none;
+            cursor: pointer;
+
+
+        }
+
+        .btn:hover {
+            background-color: violet;
+        }
+
+        .active {
+            background-color: rgb(119, 63, 140);
+        }
+
+        .container {
+            width: 300px;
+            height: 533px;
+            position: relative;
+            margin: 0 auto;
+            perspective: 800px;
+            transform-style: preserve-3d;
+
+
+        }
+
+        #card {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            left: -40px;
+            top: -15px;
+        }
+
+        #card figure {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        #card .front {
+            background: url("1.jpg");
+            background-size: cover;
+        }
+
+        #card .back {
+
+
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $(".btn").click(function () {
+                $(".back").css("background", function () {
+                    var r = Math.floor(Math.random() * 256);
+                    var g = Math.floor(Math.random() * 256);
+                    var b = Math.floor(Math.random() * 256);
+                    return "rgb(" + r + ',' + g + ',' + b + ")";
+                });
+            });
+        });
+
+
+    </script>
+    <div class="head">
+        <button class="btn ">换色</button>
+    </div>
+    <div class="content">
+        <section class="container">
+            <div id="card">
+                <figure class="front"></figure>
+                <figure class="back"></figure>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
