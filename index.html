@@ -11,6 +11,7 @@
             margin: 0;
             background: url("2.jpg");
             background-size: cover;
+            background-position: -23px 0px;
         }
 
 
@@ -40,7 +41,7 @@
         .btn {
             width: 100px;
             height: 50px;
-            background: url("3.jpg");
+            background: rgba(63, 50, 70, 0.5);
 
             border: 0;
             border-radius: 10px;
@@ -94,6 +95,7 @@
         #card .front {
             background: url("1.jpg");
             background-size: cover;
+
         }
 
         #card .back {
@@ -109,7 +111,7 @@
 
 
         $(document).ready(function () {
-            $(".btn").click(function () {
+            $("#c_btn").click(function () {
                 $(".back").css("background", function () {
                     var r = Math.floor(Math.random() * 256);
                     var g = Math.floor(Math.random() * 256);
@@ -119,10 +121,20 @@
             });
         });
 
+        $(document).ready(function () {
+            $("#x_btn").click(function () {
+                $(".back").css("background", function () {
+                    var mypic = new Array("形状/圆.jpg", "形状/方.jpg", "形状/三角.jpg", "形状/波浪.jpg", "形状/星.jpg", "形状/心.jpg");
+                    var randomNum = Math.floor(Math.random() * mypic.length);
 
+                    return "url('" + mypic[randomNum] + "') no-repeat";
+                });
+            });
+        });
     </script>
     <div class="head">
-        <button class="btn ">换色</button>
+        <button id="c_btn" class="btn ">换色</button>
+        <button id="x_btn" class="btn ">换形状</button>
     </div>
     <div class="content">
         <section class="container">
