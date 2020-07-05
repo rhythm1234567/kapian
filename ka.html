@@ -10,6 +10,7 @@
         body {
             background: url('卡片/bei.jpg');
             background-size: cover;
+
         }
 
         .head img {
@@ -93,6 +94,19 @@
         .content:hover .back {
             transform: rotateY(0deg);
         }
+
+        .bt {
+            position: absolute;
+            bottom: 180px;
+            text-align: center;
+            width: 100%;
+            height: 100px;
+
+        }
+
+        .bt img {
+            width: 50px;
+        }
     </style>
 </head>
 
@@ -100,12 +114,18 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            var randomNum = Math.floor(Math.random() * 6) + 1;
+            var randomNum = 1; randomNum = Math.floor(Math.random() * 6) + 1;
+            $(".bt").click(function () {
+                location.reload();
+            });
 
-            var s = "#" + randomNum
+
+
+            var s = "#" + randomNum;
 
             $(s).css("background", "url('卡片/k_1.jpg')");
             $(s).css("background-size", 'cover');
+
 
         });
     </script>
@@ -131,6 +151,9 @@
         <figure id="6" class="ka back ka6"></figure>
         <figure class="ka front ka6"></figure>
 
+    </div>
+    <div class="bt">
+        <span><img src="卡片/btn.png"> </span>
     </div>
 
 </body>
